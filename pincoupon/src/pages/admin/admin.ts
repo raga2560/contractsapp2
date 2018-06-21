@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Vendor } from '../../providers/vendor';
 
+import { environment } from '../../config/environment';
 
+let url = environment.url;
 
 /**
  * Generated class for the AdminPage page.
@@ -20,11 +22,20 @@ export class AdminPage {
 
   vendor: any;
   loading: any;
-
+ downloadurl: any;
  constructor(public navCtrl: NavController, public vendorService: Vendor,
               public loadingCtrl: LoadingController,
               public navParams: NavParams) {
+     if(typeof this.navParams.data.vendor == "undefined")
+     {
+         this.navCtrl.push('VendorsPage');
+     }
+     else {
+
      this.vendor = this.navParams.data.vendor;
+     alert(JSON.stringify(this.vendor));
+     this.downloadurl = url + "/"+this.vendor.vendorfilename;
+     }
   }
 
   ionViewDidLoad() {

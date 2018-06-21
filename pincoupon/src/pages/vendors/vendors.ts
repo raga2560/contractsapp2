@@ -34,6 +34,17 @@ export class VendorsPage {
     });
 
   }
+
+  refresh() {
+
+    this.vendorService.getVendors().then((data) => {
+                  this.vendors = data;
+    }, (err) => {
+        console.log("not allowed");
+    });
+
+  }
+
   
   showLoader(){
 

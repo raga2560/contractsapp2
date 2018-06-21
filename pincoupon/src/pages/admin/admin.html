@@ -6,21 +6,28 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Vendor admin </ion-title>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Vendor admin</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
+
 <ion-content padding>
 
-  <ion-list  inset padding>
+  <ion-list  inset padding *ngIf="vendor != 'undefined'">
         <ion-item>
-            <p> Administer vendor . </p>
-            <ion-input type="text" placeholder="Vendor id" ></ion-input> 
-            <button item-right ion-button color="primary"(click)="selectVendor()">Select vendor</button>
+            <ion-label> {{vendor.vendorid}} {{downloadurl}} </ion-label>
         </ion-item>
+        <ion-item>
+            <a item-left ion-button  href={{downloadurl}} target="_blank" download>Download vendor data </a>
+                    <ion-label><ion-icon name="download"></ion-icon></ion-label>
+        </ion-item > 
+
         <ion-item>
             <button item-left ion-button color="primary" (click)="pauseVendor()" >Pause vendor</button>
             <button item-right ion-button color="primary" (click)="activateVendor()">Activate vendor</button>

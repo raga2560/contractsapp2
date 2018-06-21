@@ -23,9 +23,24 @@ export class VendorIssuePage {
   constructor(public navCtrl: NavController, public vendorService: Vendor, 
               public loadingCtrl: LoadingController,
               public navParams: NavParams) {
+   this.vendor = {
+	name:'test'
+    };
   }
 
   ionViewDidLoad() {
+     this.vendor = {
+        name: '',
+	address: '',
+	phone: '',
+	email: '',
+	contracttype: '', // trial, beta, flat, mixed
+	vendorid: '',
+	vendorcomkey: '',
+	vendorcomsecret: '', // public key used by vendor for communication
+	vendorfilename: ''
+
+     };
     console.log('ionViewDidLoad CouponIssuePage');
   }
 
@@ -39,13 +54,10 @@ export class VendorIssuePage {
 
   }
   
-  vendorCreate() {
+  createVendor() {
     this.showLoader();
 
-   var vendordata = {
-	name: 'test'
-   };
-   this.vendorService.createVendor(vendordata).then((result) => {
+   this.vendorService.createVendor(this.vendor).then((result) => {
                 this.loading.dismiss();
                 this.vendor = result;
                                         console.log("vendor created");
