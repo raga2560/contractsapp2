@@ -12,6 +12,7 @@ import { SignupPage } from '../pages/signup-page/signup-page';
 import { Todos } from '../providers/todos';
 import { Vendor } from '../providers/vendor';
 import { Relation } from '../providers/relation';
+import { RelationsPage } from '../pages/relations';
 import { Auth } from '../providers/auth';
 
 
@@ -19,6 +20,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { VendorsPageModule } from '../pages/vendors/vendors.module';
+import { RelationsPageModule } from '../pages/relations/relations.module';
 import { VendorIssuePageModule } from '../pages/vendor-issue/vendor-issue.module';
 import { VendorAdminPageModule } from '../pages/vendor-admin/vendor-admin.module';
 
@@ -36,6 +38,7 @@ import { VendorAdminPageModule } from '../pages/vendor-admin/vendor-admin.module
     HomePageModule,
     ListPageModule,
     VendorsPageModule,
+    RelationsPageModule,
     VendorIssuePageModule,
     VendorAdminPageModule,
     IonicModule.forRoot(MyApp),
@@ -45,6 +48,7 @@ import { VendorAdminPageModule } from '../pages/vendor-admin/vendor-admin.module
   entryComponents: [
     MyApp,
     LoginPage, 
+    RelationsPage, 
     SignupPage
 
   ],

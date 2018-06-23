@@ -7,6 +7,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { VendorIssuePage } from '../pages/vendor-issue/vendor-issue';
+import { VendorsPage } from '../pages/vendors/vendors';
+import { RelationsPage } from '../pages/relations/relations';
 import { VendorAdminPage } from '../pages/vendor-admin/vendor-admin';
 import { LoginPage } from '../pages/login-page/login-page';
 import { SignupPage } from '../pages/signup-page/signup-page';
@@ -33,7 +35,8 @@ export class MyApp {
       { title: 'Divider', component: '' , icon: 'none' },
       { title: 'Vendor Create ', component: VendorIssuePage, icon: 'contact' },
       { title: 'Divider', component: '', icon: 'none' },
-      { title: 'Vendor Management ', component: VendorAdminPage, icon: 'contact' },
+      { title: 'Vendor Management ', component: VendorsPage, icon: 'contact' },
+      { title: 'Vendor Relations ', component: RelationsPage, icon: 'contact' },
       { title: 'Divider', component: '', icon: 'none' }
     ];
 

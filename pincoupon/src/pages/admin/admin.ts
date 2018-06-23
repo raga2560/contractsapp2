@@ -26,12 +26,11 @@ export class AdminPage {
  constructor(public navCtrl: NavController, public vendorService: Vendor,
               public loadingCtrl: LoadingController,
               public navParams: NavParams) {
-     if(typeof this.navParams.data.vendor == "undefined")
-     {
-         this.navCtrl.push('VendorsPage');
-     }
-     else {
+     this.vendor = '';
 
+     if(!(JSON.stringify(this.navParams.get('data') == JSON.stringify({}))))
+     {
+     //    this.navCtrl.push('VendorsPage');
      this.vendor = this.navParams.data.vendor;
      alert(JSON.stringify(this.vendor));
      this.downloadurl = url + "/"+this.vendor.vendorfilename;
@@ -40,6 +39,8 @@ export class AdminPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CouponIssuePage');
+     this.vendor = this.navParams.data.vendor;
+     this.downloadurl = url + "/"+this.vendor.vendorfilename;
   }
 
   showLoader(){
